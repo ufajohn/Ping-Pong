@@ -217,11 +217,10 @@ GameObject:
   - component: {fileID: 622041469}
   - component: {fileID: 622041468}
   - component: {fileID: 622041467}
-  - component: {fileID: 622041466}
   - component: {fileID: 622041465}
   m_Layer: 0
   m_Name: WallUp
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -252,20 +251,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &622041466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622041464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2d954ac1a3dede48a6981d80f2c5621, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbody2: {fileID: 622041467}
-  speed: 5
 --- !u!50 &622041467
 Rigidbody2D:
   serializedVersion: 4
@@ -363,11 +348,10 @@ GameObject:
   - component: {fileID: 828160134}
   - component: {fileID: 828160133}
   - component: {fileID: 828160132}
-  - component: {fileID: 828160131}
   - component: {fileID: 828160130}
   m_Layer: 0
   m_Name: WallDown
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -398,20 +382,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &828160131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 828160129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2d954ac1a3dede48a6981d80f2c5621, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbody2: {fileID: 828160132}
-  speed: 5
 --- !u!50 &828160132
 Rigidbody2D:
   serializedVersion: 4
@@ -510,9 +480,10 @@ GameObject:
   - component: {fileID: 1028753607}
   - component: {fileID: 1028753609}
   - component: {fileID: 1028753610}
+  - component: {fileID: 1028753611}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -617,6 +588,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2: {fileID: 1028753609}
   speed: 5
+--- !u!61 &1028753611
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028753606}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1439632401
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,8 +647,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody_Ball: {fileID: 1439632403}
-  speed: 0
-  acceleration: 0
+  speed: 5
+  acceleration: 1.2
+  player: {fileID: 0}
 --- !u!50 &1439632403
 Rigidbody2D:
   serializedVersion: 4
@@ -775,11 +773,10 @@ GameObject:
   - component: {fileID: 1950995092}
   - component: {fileID: 1950995091}
   - component: {fileID: 1950995090}
-  - component: {fileID: 1950995089}
   - component: {fileID: 1950995088}
   m_Layer: 0
   m_Name: WallSide
-  m_TagString: Untagged
+  m_TagString: Side
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -810,20 +807,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1950995089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1950995087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2d954ac1a3dede48a6981d80f2c5621, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbody2: {fileID: 1950995090}
-  speed: 5
 --- !u!50 &1950995090
 Rigidbody2D:
   serializedVersion: 4
