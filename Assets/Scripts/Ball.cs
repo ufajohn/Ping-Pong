@@ -14,8 +14,8 @@ public class Ball : MonoBehaviour
     void Start()
     {
         direction = new Vector2(Random.Range(0.5f, 1), Random.Range(0.5f, 1));
-        speed = 4;
-        acceleration = 1.2f;
+        speed = 1;
+        acceleration = 1.1f;
         transform.position = Vector2.zero;       
     }
 
@@ -24,9 +24,16 @@ public class Ball : MonoBehaviour
     {
         rigidbody_Ball.velocity = direction.normalized * speed;
           
-          if(transform.position.x > player.transform.position.x + 1){
-            Debug.Log("Вы проиграли!");
-             Start();
+        if(transform.position.x > 8.5)
+        { 
+         Debug.Log("Забитый мяч!");
+            Start();
+        }
+           
+        if (transform.position.x < -8.5)
+        {
+            Debug.Log("Забитый мяч!");
+            Start();
         }
     }
 
@@ -38,9 +45,9 @@ public class Ball : MonoBehaviour
          if(col.gameObject.CompareTag("Wall")){
             direction.y = -direction.y;
         }
-        if(col.gameObject.CompareTag("Side")){
+        /*if(col.gameObject.CompareTag("Side")){
             direction.x = -direction.x;
-        }
+        }*/
 
     }
 }

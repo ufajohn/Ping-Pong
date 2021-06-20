@@ -14,17 +14,17 @@ public class Launcher : MonoBehaviour
         Debug.Log("Connecting to Photon Network");
 
         //2
-        roomJoinUI.SetActive(false);
-        buttonLoadArena.SetActive(false);
+        //roomJoinUI.SetActive(false);
+        //buttonLoadArena.SetActive(false);
 
         //3
-        ConnectToPhoton();
+        //ConnectToPhoton();
     }
 
     void Awake()
     {
         //4 
-        PhotonNetwork.AutomaticallySyncScene = true;
+        //PhotonNetwork.AutomaticallySyncScene = true;
     }
 
     // Update is called once per frame
