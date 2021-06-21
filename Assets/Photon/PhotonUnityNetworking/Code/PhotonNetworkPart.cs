@@ -28,6 +28,11 @@ namespace Photon.Pun
     {
         private static HashSet<byte> allowedReceivingGroups = new HashSet<byte>();
 
+        public static void JoinOrCreateRoom(object roomName, RoomOptions roomOptions, TypedLobby typedLobby)
+        {
+            throw new NotImplementedException();
+        }
+
         private static HashSet<byte> blockedSendingGroups = new HashSet<byte>();
 
         private static HashSet<PhotonView> reusablePVHashset = new HashSet<PhotonView>();

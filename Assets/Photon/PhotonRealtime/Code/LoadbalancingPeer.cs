@@ -2014,7 +2014,7 @@ namespace Photon.Realtime
         /// <summary>
         /// Creates a TypedLobby instance. Unless Name is changed, this points to the "default lobby" (<see cref="TypedLobby.Default"/>).
         /// </summary>
-        internal TypedLobby()
+        internal TypedLobby(UnityEngine.UI.Text roomName, LobbyType @default)
         {
         }
 
@@ -2027,6 +2027,10 @@ namespace Photon.Realtime
         {
             this.Name = name;
             this.Type = type;
+        }
+
+        public TypedLobby()
+        {
         }
 
         public override string ToString()

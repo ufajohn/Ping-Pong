@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using System.IO;
+using UnityEngine.UI;
 
 public class GameSetup : MonoBehaviour
 {
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +21,6 @@ public class GameSetup : MonoBehaviour
         }
     }
 
-   
+ 
+
 }
