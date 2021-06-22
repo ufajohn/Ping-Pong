@@ -15,8 +15,26 @@ public class MenuManager : MonoBehaviourPunCallbacks
     public string roomName;
     public Text playerStatus;
     private TypedLobby sqlLobby = new TypedLobby("customSqlLobby", LobbyType.SqlLobby);
+
+    private void Start()
+    {
+        Debug.Log(PhotonNetwork.PlayerList);
+        Debug.Log(PhotonNetwork.CurrentRoom);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            //SceneManager.LoadScene("Menu");
+            Debug.Log(PhotonNetwork.MasterClient);
+            PhotonNetwork.JoinRandomRoom();
+            
+        }
+    }
     public void CreateRoom()
     {
+        if (photonView.IsMine)
+        {
+            PhotonNetwork.SetMasterClient(PhotonNetwork.LocalPlayer);
+        }
+        
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = 2;
         PhotonNetwork.CreateRoom(createInput.text, roomOptions);
@@ -34,27 +52,23 @@ public class MenuManager : MonoBehaviourPunCallbacks
         Debug.Log(sqlLobby);
     }
 
-  public void JoinRoom()
-      {
-          if (PhotonNetwork.IsConnected)
-        {
-             PhotonNetwork.JoinRoom(joinInput.text);
-        }
-      }
-
-      
-
+   public void JoinRoom()
+    {
+        Debug.Log("JoinRoom" + PhotonNetwork.CurrentRoom);
+        PhotonNetwork.JoinRoom(joinInput.text);
+    }      
+    
     public override void OnJoinedRoom()
     {
         
-
-        if (PhotonNetwork.CurrentRoom.PlayerCount > 1)
+        if (PhotonNetwork.CurrentRoom.PlayerCount == 2)
         {
             PhotonNetwork.LoadLevel("GameScene");
         }
         else
         {
-            playerStatus.text = "Minimum 2 Players required to Load Arena!";
+            Debug.Log("OnJoinedRoom" + PhotonNetwork.CurrentRoom);
+            Debug.Log("Minimum 2 Players required to Load Arena!");
         }
     }
 
