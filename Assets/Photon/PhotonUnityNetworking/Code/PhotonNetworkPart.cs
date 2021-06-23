@@ -37,6 +37,11 @@ namespace Photon.Pun
 
         private static HashSet<PhotonView> reusablePVHashset = new HashSet<PhotonView>();
 
+        public static void CreateRoom(int randomRoomName, RoomOptions roomOptions)
+        {
+            throw new NotImplementedException();
+        }
+
 
         /// <summary>
         /// The photon view list.

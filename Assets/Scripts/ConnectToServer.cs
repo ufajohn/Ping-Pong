@@ -15,16 +15,10 @@ void Awake()
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
-        PhotonNetwork.GameVersion = gameVersion;
-        
+        PhotonNetwork.GameVersion = gameVersion;       
     }
-
    public override void OnConnectedToMaster()
     {
         SceneManager.LoadScene("Menu");
     }
-
-
-
-
 }

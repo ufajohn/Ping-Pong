@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rigidbody2;
     public float speed;
     PhotonView view;
+    public Joystick joystick;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,8 @@ public class Player : MonoBehaviour
         if (view.IsMine)
         {
             Vector2 direction = Vector2.zero;
-
+            
+            
                     if (Input.GetKey(KeyCode.W) && transform.position.y < 3.8){
                      direction = Vector2.up;           
                    } 
