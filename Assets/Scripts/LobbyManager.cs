@@ -39,13 +39,13 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         observer.SetActive(false);
         PhotonNetwork.JoinRandomRoom();
     }
-    public void Observer()
+    /*public void Observer()
     {
         if (PhotonNetwork.CurrentRoom.PlayerCount == 2 && PhotonNetwork.IsMasterClient)
         {
             PhotonNetwork.LoadLevel("GameScene");
         }
-    }
+    }*/
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
         MakeRoom();

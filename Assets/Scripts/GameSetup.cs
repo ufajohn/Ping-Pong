@@ -13,7 +13,7 @@ public class GameSetup : MonoBehaviour
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.Instantiate(Path.Combine("", "Player"), new Vector3(8.5f, 0, 0), Quaternion.identity);
+            PhotonNetwork.Instantiate("Player", new Vector3(8.5f, 0, 0), Quaternion.identity);
         }
         else
         {

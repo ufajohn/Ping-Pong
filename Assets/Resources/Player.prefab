@@ -122,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2: {fileID: 326587327312626761}
   speed: 5
+  joystick: {fileID: 0}
 --- !u!61 &326587327312626763
 BoxCollider2D:
   m_ObjectHideFlags: 0
