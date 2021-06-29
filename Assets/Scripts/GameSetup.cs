@@ -7,8 +7,6 @@ using UnityEngine.UI;
 
 public class GameSetup : MonoBehaviour
 {
-   
-    // Start is called before the first frame update
     void Start()
     {
         if (PhotonNetwork.IsMasterClient)
@@ -17,10 +15,8 @@ public class GameSetup : MonoBehaviour
         }
         else
         {
-            PhotonNetwork.Instantiate(Path.Combine("", "Player"), new Vector3(-8.5f, 0, 0), Quaternion.identity);
+            PhotonNetwork.Instantiate("Player", new Vector3(-8.5f, 0, 0), Quaternion.identity);
         }
-    }
-
- 
+    }  
 
 }
