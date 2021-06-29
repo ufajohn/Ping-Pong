@@ -10,14 +10,16 @@ public class Ball : MonoBehaviour
     public float acceleration;
     Vector2 direction;
     public Player player;    
-    public Text matchOver;   
+    public Text matchOver;
+    int points = 0;
+    public Text playerScoreText;
 
     // Start is called before the first frame update
     public void Start()
     {
         direction = new Vector2(Random.Range(0.5f, 1), Random.Range(0.5f, 1));
         speed = 2;
-        acceleration = 1.1f;
+        acceleration = 1.5f;
         transform.position = Vector2.zero;       
     }
 
@@ -55,6 +57,9 @@ public class Ball : MonoBehaviour
         if(col.gameObject.CompareTag("Player")){
             direction.x = -direction.x;
             speed *= acceleration;
+            points++;
+            playerScoreText.text = points.ToString();
+
         }
          if(col.gameObject.CompareTag("Wall")){
             direction.y = -direction.y;

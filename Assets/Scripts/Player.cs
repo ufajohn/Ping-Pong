@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
                      direction = Vector2.down; 
                    } 
 
-            rigidbody2.velocity = direction * speed; 
+            rigidbody2.velocity = direction * 20; 
 
         }
    
