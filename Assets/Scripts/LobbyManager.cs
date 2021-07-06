@@ -14,38 +14,27 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     GameObject searchingPanel;
     [SerializeField]
     GameObject loadingText;
-    [SerializeField]
-    GameObject observer;
-
+    
     private void Start()
     {
         searchingPanel.SetActive(false);
-        findMatchbtn.SetActive(false);
-        observer.SetActive(false);
+        findMatchbtn.SetActive(false);        
         PhotonNetwork.ConnectUsingSettings();
     }
     public override void OnConnectedToMaster()
     {
         Debug.Log(PhotonNetwork.CloudRegion + " server");
         PhotonNetwork.AutomaticallySyncScene = true;
-        findMatchbtn.SetActive(true);
-        observer.SetActive(true);
+        findMatchbtn.SetActive(true);        
         loadingText.SetActive(false);
     }
     public void FindMatch()
     {
         searchingPanel.SetActive(true);
-        findMatchbtn.SetActive(false);
-        observer.SetActive(false);
+        findMatchbtn.SetActive(false);       
         PhotonNetwork.JoinRandomRoom();
     }
-    /*public void Observer()
-    {
-        if (PhotonNetwork.CurrentRoom.PlayerCount == 2 && PhotonNetwork.IsMasterClient)
-        {
-            PhotonNetwork.LoadLevel("GameScene");
-        }
-    }*/
+    
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
         MakeRoom();
@@ -68,7 +57,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         searchingPanel.SetActive(false);
         findMatchbtn.SetActive(true);
-        observer.SetActive(true);
+       
         PhotonNetwork.LeaveRoom();
     }
     public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
