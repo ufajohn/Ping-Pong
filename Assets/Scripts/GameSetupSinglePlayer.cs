@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class GameSetupSinglePlayer : MonoBehaviour
 {
+    public object player;
     void Start()
     {  
         
